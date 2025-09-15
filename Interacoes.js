@@ -1,4 +1,4 @@
-function pegaInformacoes(){ 
+function fazRequisicao(){ 
             
     // lê ?name= da URL
     const parametros = new URLSearchParams(location.search);
@@ -68,4 +68,17 @@ function pegaInformacoes(){
         loader.classList.add("hidden");
         document.getElementById('teste').style.display = 'flex';
         window.location.replace("index3.html")});// console.log(error)
+}
+
+function recebeInformacoesUsuario(){
+
+    const info = document.getElementById('form');
+    info.addEventListener('submit', (e) => { e.preventDefault();
+        
+        const inputPokemon = document.getElementById('inputPokemon').value.trim();
+
+        if (!inputPokemon) return;
+
+        window.location.href = `index2.html?pokemon=${encodeURIComponent(inputPokemon)}`;
+    });
 }
