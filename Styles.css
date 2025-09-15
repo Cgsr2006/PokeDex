@@ -1,0 +1,147 @@
+/*----------------Características Gerais-------------------*/
+body{
+    background-color: #0F172A;
+}
+
+input{
+    background-color: #334155;
+    color: #788EC2;
+    border: none;
+    outline-color:#1C90E3;
+
+    font-size: 22px;
+    padding-left: 16px;
+    margin-right: 15px;
+    border-radius: 16px;
+    width: 945px;
+    height: 64px;
+}
+
+input::placeholder{
+    color: #788EC2;
+    font-size: 22px;
+}
+
+.caracterisiticasGeraisPaginas{
+    font-family: 'DM Sans';
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+    gap: 25px;
+}
+
+.botaoSecreto{
+    border: none;         
+    background: none;     
+    cursor: pointer;  
+}
+
+.titulo{
+    color: #F8FAFC;
+    align-items: center;
+    place-items: center;
+    
+
+    font-size: 32px;
+    line-height: 0px;
+}
+
+.imagemLinha{
+
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.botoesPadrao{
+    background-color: #1C90E3;
+    color: #F9FAFB;
+    border: none;
+    cursor: pointer;
+
+
+    margin-left: 5px;
+    font-size: 16px;
+    width: 135px;
+    height: 64px;
+    border-radius: 8px;
+}
+
+/*---------------- Características Página 1 -------------------*/
+.imagemPokemon{
+    width: 696px;
+    height: 391px;
+}
+
+/*---------------- Características Página 2 -------------------*/
+.quadroSegundaPagina{
+    background-color: #334155;
+
+    border-radius: 16px;
+    width: 696px;
+    height: 452px;
+}
+
+.nomesPokemon{
+    background-color: #1C90E3;
+    color: #F9FAFB;
+
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.divPokemonDefault{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    top: 20px;
+    right: 230px;
+}
+
+.divPokemonShiny{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    bottom: 220px;
+    left: 240px;
+}
+
+.tamanhoImagemPokemon{
+    width: 170px;
+}
+
+.caracteristicasPokemon{
+    background-color: #0F172A;
+    color: #E5E7EB;
+    align-items: center;
+    position: relative;
+    display: inline-block; /* faz a largura acompanhar o conteúdo */
+    
+    border-radius: 16px;
+    padding: 10px;         /* espaço interno opcional */
+    bottom: 260px;
+}
+
+/*---------------- Características Página 3 -------------------*/
+.divPikachuConfuso{
+    background-color: #334155;
+    color: #E5E7EB;
+    place-items: center;
+
+    font-size: 18px;
+    width: 696px;
+    height: 390px;
+    border-radius: 16px;
+}
+
+.pikachuConfuso{
+    position: relative;
+
+    width: 305px;
+    height: 247px;
+    top: 82px;
+}
