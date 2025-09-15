@@ -42,9 +42,10 @@
             const info = document.getElementById('form');
             info.addEventListener('submit', (e) => { e.preventDefault();
                 
-            const inputPokemon = document.getElementById('inputPokemon').value.trim();
+                const inputPokemon = document.getElementById('inputPokemon').value.trim();
 
-            if (!inputPokemon) return;
+                if (!inputPokemon) return;
+
                 window.location.href = `index2.html?pokemon=${encodeURIComponent(inputPokemon)}`;
             });
         </script>

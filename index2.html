@@ -13,10 +13,58 @@
     </head>
 
     <body>
+        <!-- Tela de carregamento -->
+        <div id="loader" class="loader-overlay">
+            <div class="spinner"></div>
+            <p>Carregando....</p>
+        </div>
+
+        <div class="caracterisiticasGeraisPaginas" id="teste">
+            
+            <a href="index.html"><button class="botaoSecreto"><img src="./ImagensSite/icon.png"></button></a>
+
+            <img src="./ImagensSite/Logo.svg">
+
+            <p class="titulo">Resultado Encontrado</p>
+
+            <div class="quadroSegundaPagina">
+
+                <div class="divPokemonDefault">
+                    <img id="imagemPokemons" class="tamanhoImagemPokemon">
+                    <b><p id="nomePokemon" class="nomesPokemon"></p></b>
+                </div>
+
+                <div class="divPokemonShiny">
+                    <img id="imagemPokemonsShiny" class="tamanhoImagemPokemon">
+                    <b><p id="nomePokemonShiny" class="nomesPokemon"></p></b>
+                </div>
+
+                <div class="caracteristicasPokemon" id="quadroCaracteristicasPokemon">
+                    <p id="info1"></p>
+                    <p id="info2"></p>
+                    <p id="info3"></p>
+                    <p id="info4"></p>
+                    <p id="info5"></p>
+                </div>
+            </div>
+            
+            <img src="./ImagensSite/divider.png" class="imagemLinha">
+
+            <form id="form">
+                <input id="inputPokemon" placeholder="Pesquise por Pokemons ou pelo número Pokedex" required>
+                <button type="submit" class="botoesPadrao">Pesquisar</button>
+            </form>
+
+        </div>
+
         <script>
             // lê ?name= da URL
             const parametros = new URLSearchParams(location.search);
             const pokemon = parametros.get('pokemon');
+
+            // mostra loader ao iniciar
+            loader.classList.remove("hidden");
+            document.getElementById('teste').style.display = 'none';
 
             // busca os dados na PokeAPI (sem tratamento de erros, conforme pedido)
             fetch(`https://pokeapi.co/api/v2/pokemon/${encodeURIComponent(pokemon)}`)
@@ -71,55 +119,24 @@
                     img2.src = dados.sprites.front_shiny;
                 });
 
-            }).catch(error => window.location.replace("index3.html"));// console.log(error)
+                loader.classList.add("hidden");
+                document.getElementById('teste').style.display = 'flex';
+
+            }).catch(error => {
+                loader.classList.add("hidden");
+                document.getElementById('teste').style.display = 'flex';
+                window.location.replace("index3.html")});// console.log(error)
         </script>
-
-        <div class="caracterisiticasGeraisPaginas">
-            
-            <a href="index.html"><button class="botaoSecreto"><img src="./ImagensSite/icon.png"></button></a>
-
-            <img src="./ImagensSite/Logo.svg">
-
-            <p class="titulo">Resultado Encontrado</p>
-
-            <div class="quadroSegundaPagina">
-
-                <div class="divPokemonDefault">
-                    <img id="imagemPokemons" class="tamanhoImagemPokemon">
-                    <b><p id="nomePokemon" class="nomesPokemon"></p></b>
-                </div>
-
-                <div class="divPokemonShiny">
-                    <img id="imagemPokemonsShiny" class="tamanhoImagemPokemon">
-                    <b><p id="nomePokemonShiny" class="nomesPokemon"></p></b>
-                </div>
-
-                <div class="caracteristicasPokemon" id="quadroCaracteristicasPokemon">
-                    <p id="info1"></p>
-                    <p id="info2"></p>
-                    <p id="info3"></p>
-                    <p id="info4"></p>
-                    <p id="info5"></p>
-                </div>
-            </div>
-            
-            <img src="./ImagensSite/divider.png" class="imagemLinha">
-
-            <form id="form">
-                <input id="inputPokemon" placeholder="Pesquise por Pokemons ou pelo número Pokedex" required>
-                <button type="submit" class="botoesPadrao">Pesquisar</button>
-            </form>
-
-        </div>
 
          <!-- Interação JavaScript -->
         <script>
             const info = document.getElementById('form');
             info.addEventListener('submit', (e) => { e.preventDefault();
                 
-            const inputPokemon = document.getElementById('inputPokemon').value.trim();
+                const inputPokemon = document.getElementById('inputPokemon').value.trim();
 
-            if (!inputPokemon) return;
+                if (!inputPokemon) return;
+
                 window.location.href = `index2.html?pokemon=${encodeURIComponent(inputPokemon)}`;
             });
         </script>
