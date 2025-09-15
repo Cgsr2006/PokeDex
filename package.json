@@ -1,0 +1,23 @@
+{
+  "devDependencies": {
+    "typescript": "^5.9.2"
+  },
+  "name": "pokedex",
+  "version": "1.0.0",
+  "description": "O porjeto foi feito utilizando as linguagens HTML, CSS e JavaScript",
+  "main": "Interacoes.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cgsr2006/PokeDex.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Cgsr2006/PokeDex/issues"
+  },
+  "homepage": "https://github.com/Cgsr2006/PokeDex#readme"
+}
