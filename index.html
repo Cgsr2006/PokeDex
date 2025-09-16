@@ -1,41 +1,45 @@
 <!doctype html>
 <html lang="pt-BR">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>PokemonFinder_1</title>
 
-        <script src="Interacoes.js"></script>
-        <link rel="stylesheet" href="Styles.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
-    </head>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PokemonFinder_1</title>
 
-    <body>
-        <div class="caracterisiticasGeraisPaginas">
-            
-            <a href="index.html"><button class="botaoSecreto"><img src="./ImagensSite/icon.png"></button></a>
+    <script src="Interacoes.js"></script>
+    <link rel="stylesheet" href="Styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+        rel="stylesheet">
+</head>
 
-            <img src="./ImagensSite/Logo.svg">
-            
-            <div class="titulo">
-                <p>Digite o nome do Pokémon ou o</p>
-                    <p>número da PokéDex</p>
-            </div>
-            
-            <img src="./ImagensSite/image 1.png" class="imagemPokemon">
-            <img src="./ImagensSite/divider.png" class="imagemLinha">
+<body>
+    <div class="caracterisiticasGeraisPaginas">
 
-            <form id="form">
-                <input id="inputPokemon" placeholder="Pesquise por Pokemons ou pelo número Pokedex" required>
-                <button type="submit" class="botoesPadrao">Pesquisar</button>
-            </form>
+        <a href="index.html"><button class="botaoSecreto"><img src="./ImagensSite/icon.png"></button></a>
+
+        <img src="./ImagensSite/Logo.svg">
+
+        <div class="titulo">
+            <p>Digite o nome do Pokémon ou o</p>
+            <p>número da PokéDex</p>
         </div>
-        
-        <!-- Interação JavaScript -->
-        <script>
-            recebeInformacoesUsuario();
-        </script>  
-    </body>
+
+        <img src="./ImagensSite/image 1.png" class="imagemPokemon">
+        <img src="./ImagensSite/divider.png" class="imagemLinha">
+
+        <form id="form">
+            <input id="inputPokemon" placeholder="Pesquise por Pokemons ou pelo número Pokedex" required>
+            <button type="submit" class="botoesPadrao">Pesquisar</button>
+        </form>
+    </div>
+
+    <!-- Interação JavaScript -->
+    <script>
+        recebeInformacoesUsuario();
+    </script>
+</body>
+
 </html>
