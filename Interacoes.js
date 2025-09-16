@@ -5,8 +5,8 @@ function fazRequisicao() {
     const pokemon = parametros.get('pokemon');
 
     // mostra loader ao iniciar
-    loader.classList.remove("hidden");
-    document.getElementById('teste').style.display = 'none';
+    loader.classList.remove("hidden"); // Remove a classe hidden do loader, fazendo ele aparecer
+    document.getElementById('teste').style.display = 'none'; // Muda o display pra none que significa que a tela vai ficar sem nada
 
     // busca os dados na PokeAPI + garante delay mínimo
     Promise.all([
@@ -37,12 +37,12 @@ function fazRequisicao() {
 
             const controle = document.getElementById('quadroCaracteristicasPokemon');
             if (listaHabilidades.length === 1) controle.style.left = '260px';
-
-            else controle.style.left = '210px';
+                else  if(listaHabilidades.length === 2) controle.style.left = '210px';
+                    else controle.style.left = '170px';
 
             document.getElementById("info5").innerHTML = "Habilidades: " + `${listaHabilidades.join(" / ")}`;
 
-            const img = document.getElementById("imagemPokemons");
+            const img = document.getElementById("imagemPokemons"); // Só pra ficar mais fácil de manipular
             img.src = dados.sprites.front_default;
             img.addEventListener("mouseover", () => {
                 img.src = dados.sprites.back_default;
@@ -51,7 +51,7 @@ function fazRequisicao() {
                 img.src = dados.sprites.front_default;
             });
 
-            const img2 = document.getElementById("imagemPokemonsShiny");
+            const img2 = document.getElementById("imagemPokemonsShiny"); //Só pra ficar mais fácil de manipular
             img2.src = dados.sprites.front_shiny;
             img2.addEventListener("mouseover", () => {
                 img2.src = dados.sprites.back_shiny;
@@ -59,7 +59,6 @@ function fazRequisicao() {
             }); img2.addEventListener("mouseout", () => {
                 img2.src = dados.sprites.front_shiny;
             });
-
             loader.classList.add("hidden");
             document.getElementById('teste').style.display = 'flex';
 
