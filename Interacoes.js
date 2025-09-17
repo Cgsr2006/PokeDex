@@ -13,15 +13,15 @@ async function fazRequisicao() {
     const dados = await fetch(caminho).then((res) => res.json());
     const delay = new Promise((resolve) => setTimeout(resolve, 1000)); await delay;
 
+    // Coletando os dados das Habilidades dos Pokemons <---------------------------------------------------
     document.getElementById("nomePokemonShiny").innerHTML = dados.name.toUpperCase() + " (SHINY)";
     document.getElementById("nomePokemon").innerHTML = dados.name.toUpperCase();
     document.getElementById("info1").innerHTML = "Id: " + dados.id;
 
     const tipos = dados.types;
-    const listaTipos = tipos.map((item) => {
-      return item.type.name;
-    });
+    const listaTipos = tipos.map((item) => {return item.type.name;});
     document.getElementById("info2").innerHTML = "Tipos: " + `${listaTipos.join(" / ")}`;
+
     document.getElementById("info3").innerHTML = "Peso: " + dados.weight / 10 + " kg";
     document.getElementById("info4").innerHTML = "Altura: " + dados.height * 10 + " cm";
 
@@ -33,36 +33,34 @@ async function fazRequisicao() {
     });
     document.getElementById("info5").innerHTML = "Habilidades: " + `${listaHabilidades.join(" / ")}`;
 
-    const controle = document.getElementById("quadroCaracteristicasPokemon");
-    if (listaHabilidades.length === 1) controle.style.left = "260px";
-      else if (listaHabilidades.length === 2) controle.style.left = "210px";
-        else controle.style.left = "170px";
-      
+
+    // Coletando os dados dos Status dos Pokemons <---------------------------------------------------
+    document.getElementById("status1").innerHTML = "HP: " + dados.stats[0].base_stat;
+    document.getElementById("status2").innerHTML = "Attack: " + dados.stats[1].base_stat;
+    document.getElementById("status3").innerHTML = "Defense: " + dados.stats[2].base_stat;
+    document.getElementById("status4").innerHTML = "Special-defense: " + dados.stats[3].base_stat;
+    document.getElementById("status5").innerHTML = "Speed: " + dados.stats[4].base_stat;
+  
+  
+    // Implementando a interação das imagens com o mouse <---------------------------------------------------
     const img = document.getElementById("imagemPokemons"); // Só pra ficar mais fácil de manipular
     img.src = dados.sprites.front_default;
-    img.addEventListener("mouseover", () => {
-      img.src = dados.sprites.back_default;
-    });
-    img.addEventListener("mouseout", () => {
-      img.src = dados.sprites.front_default;
-    });
 
+    img.addEventListener("mouseover", () => {img.src = dados.sprites.back_default;});
+    img.addEventListener("mouseout", () => {img.src = dados.sprites.front_default;});
+      
     const img2 = document.getElementById("imagemPokemonsShiny"); //Só pra ficar mais fácil de manipular
     img2.src = dados.sprites.front_shiny;
-    img2.addEventListener("mouseover", () => {
-      img2.src = dados.sprites.back_shiny;
-    });
-    img2.addEventListener("mouseout", () => {
-      img2.src = dados.sprites.front_shiny;
-    });
-    document.getElementById("teste").style.display = "flex";
 
+    img2.addEventListener("mouseover", () => {img2.src = dados.sprites.back_shiny;});
+    img2.addEventListener("mouseout", () => {img2.src = dados.sprites.front_shiny;});
+  
   } catch (error) {
-
     document.getElementById("teste").style.display = "flex";
     window.location.replace("index3.html");// console.log(error)
 
   } finally {
+    document.getElementById("teste").style.display = "flex";
     loader.classList.add("hidden");
   }
 }
@@ -90,13 +88,14 @@ function mudaCor(idElemento, idElemento2) {
 
   // mostra/esconde se for aparência ou habilidades
   if (idElemento === "botaoAparencia") {
-    document.getElementById("quadroCaracteristicasPokemon").style.display =
-      "none"; // esconde características
+    document.getElementById("quadroHabilidadesPokemon").style.display = "none"; // esconde características
+    document.getElementById("quadroStatusPokemon").style.display = "none";
     document.getElementById("divPokemonDefault").style.display = "flex";
     document.getElementById("divPokemonShiny").style.display = "flex";
+
   } else if (idElemento === "botaoHabilidades") {
-    document.getElementById("quadroCaracteristicasPokemon").style.display =
-      "inline-block"; // mostra características
+    document.getElementById("quadroHabilidadesPokemon").style.display = "inline-block"; // mostra características
+    document.getElementById("quadroStatusPokemon").style.display = "inline-block";
     document.getElementById("divPokemonDefault").style.display = "none";
     document.getElementById("divPokemonShiny").style.display = "none";
   }

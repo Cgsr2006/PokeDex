@@ -1,93 +1,90 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>PokemonFinder_2</title>
 
-    <script src="Interacoes.js"></script>
-    <link rel="stylesheet" href="Styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
-      rel="stylesheet"
-    />
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PokemonFinder_2</title>
 
-  <body>
-    <!-- Tela de carregamento -->
-    <div id="loader" class="loader-overlay">
-      <div class="spinner"></div>
-      <b>
-        <p>Carregando...</p>
-      </b>
-    </div>
+  <script src="Interacoes.js"></script>
+  <link rel="stylesheet" href="Styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+    rel="stylesheet" />
+</head>
 
-    <div class="caracterisiticasGeraisPaginas" id="teste">
-      <a href="index.html"
-        ><button class="botaoSecreto">
-          <img src="./ImagensSite/icon.png" /></button
-      ></a>
+<body>
+  <!-- Tela de carregamento -->
+  <div id="loader" class="loader-overlay">
+    <div class="spinner"></div>
+    <b>
+      <p>Carregando...</p>
+    </b>
+  </div>
 
-      <img src="./ImagensSite/Logo.svg" />
+  <div class="caracterisiticasGeraisPaginas" id="teste">
+    <a href="index.html"><button class="botaoSecreto">
+        <img src="./ImagensSite/icon.png" /></button></a>
 
-      <p class="titulo">Resultado Encontrado</p>
+    <img src="./ImagensSite/Logo.svg" />
 
-      <div class="quadroSegundaPagina">
-        <button
-          id="botaoAparencia"
-          onclick="mudaCor('botaoAparencia', 'botaoHabilidades')"
-        >
-          <b>Aparência</b>
-        </button>
-        <button
-          id="botaoHabilidades"
-          onclick="mudaCor('botaoHabilidades', 'botaoAparencia')"
-        >
-          <b>Habilidades</b>
-        </button>
+    <p class="titulo">Resultado Encontrado</p>
 
-        <div id="divPokemonDefault">
-          <img id="imagemPokemons" class="tamanhoImagemPokemon" />
-          <b>
-            <p id="nomePokemon" class="nomesPokemon"></p>
-          </b>
-        </div>
+    <div class="quadroSegundaPagina">
+      <button id="botaoAparencia" onclick="mudaCor('botaoAparencia', 'botaoHabilidades')">
+        <b>Aparência</b>
+      </button>
+      <button id="botaoHabilidades" onclick="mudaCor('botaoHabilidades', 'botaoAparencia')">
+        <b>Habilidades / Status</b>
+      </button>
 
-        <div id="divPokemonShiny">
-          <img id="imagemPokemonsShiny" class="tamanhoImagemPokemon" />
-          <b>
-            <p id="nomePokemonShiny" class="nomesPokemon"></p>
-          </b>
-        </div>
-
-        <div id="quadroCaracteristicasPokemon">
-          <p id="info1"></p>
-          <p id="info2"></p>
-          <p id="info3"></p>
-          <p id="info4"></p>
-          <p id="info5"></p>
-        </div>
+      <div id="divPokemonDefault">
+        <img id="imagemPokemons" class="tamanhoImagemPokemon" />
+        <b>
+          <p id="nomePokemon" class="nomesPokemon"></p>
+        </b>
       </div>
 
-      <img src="./ImagensSite/divider.png" class="imagemLinha" />
+      <div id="divPokemonShiny">
+        <img id="imagemPokemonsShiny" class="tamanhoImagemPokemon" />
+        <b>
+          <p id="nomePokemonShiny" class="nomesPokemon"></p>
+        </b>
+      </div>
 
-      <form id="form">
-        <input
-          id="inputPokemon"
-          placeholder="Pesquise por Pokemons ou pelo número Pokedex"
-          required
-        />
-        <button type="submit" class="botoesPadrao">Pesquisar</button>
-      </form>
+      <div id="quadroHabilidadesPokemon">
+        <p id="info1"></p>
+        <p id="info2"></p>
+        <p id="info3"></p>
+        <p id="info4"></p>
+        <p id="info5"></p>
+      </div>
+
+      <div id="quadroStatusPokemon">
+        <p id="status1">fff</p>
+        <p id="status2">ffff</p>
+        <p id="status3">ffff</p>
+        <p id="status4">fff</p>
+        <p id="status5">gggggggggggggggggggg</p>
+      </div>
     </div>
 
-    <!-- Interação JavaScript -->
-    <script>
-      recebeInformacoesUsuario();
+    <img src="./ImagensSite/divider.png" class="imagemLinha" />
 
-      fazRequisicao();
-    </script>
-  </body>
+    <form id="form">
+      <input id="inputPokemon" placeholder="Pesquise por Pokemons ou pelo número Pokedex" required />
+      <button type="submit" class="botoesPadrao">Pesquisar</button>
+    </form>
+  </div>
+
+  <!-- Interação JavaScript -->
+  <script>
+    recebeInformacoesUsuario();
+
+    fazRequisicao();
+  </script>
+</body>
+
 </html>
